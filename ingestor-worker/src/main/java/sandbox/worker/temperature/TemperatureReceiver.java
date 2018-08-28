@@ -20,7 +20,7 @@ public class TemperatureReceiver {
 
     @JmsListener(destination = "${temperature.topic}", concurrency = "${temperature.concurrency}")
     public void receive(TemperatureMeasure temperatureMeasure) {
-        logger.info("Received Temperature: "+ temperatureMeasure);
+        logger.info("Received Temperature: " + temperatureMeasure);
         temperatureMeasureRepository.save(temperatureMeasure);
     }
 }

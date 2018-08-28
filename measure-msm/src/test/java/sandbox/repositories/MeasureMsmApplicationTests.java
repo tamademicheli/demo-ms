@@ -2,20 +2,18 @@ package sandbox.repositories;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.swing.text.html.Option;
-import java.time.Instant;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.Optional;
 
 
-// TODO implement embedded client,... and right assertions
+@Ignore("Use only for local development tests or implement an embedded elastic search")
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class MeasureMsmApplicationTests {
@@ -33,7 +31,7 @@ public class MeasureMsmApplicationTests {
         TemperatureMeasure temperatureMeasure = new TemperatureMeasure();
         temperatureMeasure.setDeviceId("test");
         temperatureMeasure.setMeasureTime(LocalDateTime.now());
-        temperatureMeasure.setLocation(1.1234,2.2345);
+        temperatureMeasure.setLocation(1.1234, 2.2345);
         temperatureMeasure.setCelsius(23.12);
         return temperatureMeasure;
     }

@@ -26,11 +26,10 @@ public class MeasureConfig {
     int esport;
 
     @Value("${elasticsearch.home}")
-    private String elasticsearchHome;
+    String elasticsearchHome;
 
     @Value("${elasticsearch.clustername}")
-    private String clusterName;
-
+    String clusterName;
 
 
     @Bean
@@ -40,7 +39,7 @@ public class MeasureConfig {
                 .put("path.home", elasticsearchHome)
                 .put("cluster.name", clusterName).build();
 
-        try(TransportClient client = new PreBuiltTransportClient(elasticsearchSettings)){
+        try (TransportClient client = new PreBuiltTransportClient(elasticsearchSettings)) {
             client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(eshost), esport));
             return client;
         }
@@ -48,10 +47,9 @@ public class MeasureConfig {
     }
 
     @Bean
-    public ElasticsearchOperations elasticsearchTemplate()throws UnknownHostException {
+    public ElasticsearchOperations elasticsearchTemplate() throws UnknownHostException {
         return new ElasticsearchTemplate(client());
     }
-
 
 
 }

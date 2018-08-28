@@ -12,7 +12,7 @@ import sandbox.repositories.MeasureConfig;
 @Import(MeasureConfig.class)
 public class IngestorWorkerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(IngestorWorkerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(IngestorWorkerApplication.class, args);
+    }
 }

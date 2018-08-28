@@ -2,7 +2,6 @@ package sandbox.repositories;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchCrudRepository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -12,7 +11,6 @@ public interface TemperatureMeasureRepository extends ElasticsearchCrudRepositor
 
 
     List<TemperatureMeasure> findByDeviceId(String deviceId);
-
 
 
 }

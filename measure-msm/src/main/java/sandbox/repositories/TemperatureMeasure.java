@@ -42,16 +42,16 @@ public class TemperatureMeasure implements Serializable {
         this.measureTime = measureTime;
     }
 
-    public void setLocation(GeoPoint location) {
-        this.location = location;
-    }
-
     public void setLocation(double lat, double lon) {
         setLocation(new GeoPoint(lat, lon));
     }
 
     public GeoPoint getLocation() {
         return location;
+    }
+
+    public void setLocation(GeoPoint location) {
+        this.location = location;
     }
 
     public String getDeviceId() {

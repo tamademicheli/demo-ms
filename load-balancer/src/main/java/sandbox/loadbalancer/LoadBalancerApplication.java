@@ -10,7 +10,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @EnableEurekaClient
 public class LoadBalancerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(LoadBalancerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(LoadBalancerApplication.class, args);
+    }
 }

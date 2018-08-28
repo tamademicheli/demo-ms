@@ -1,8 +1,14 @@
 {
   "id": "${= UUID.randomUUID().toString()}",
-  "measureTime": "${= (new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSS"))}" ,
+  "measureTime": "${= (new Date().format("
+  yyyy-MM-dd
+  'T'
+  HH: mm
+  :
+  ss.SSS
+  "))}",
   "location": {
-    "lat": "${= (new Random().nextDouble() * 2 - 1 ) * 90}" ,
+    "lat": "${= (new Random().nextDouble() * 2 - 1 ) * 90}",
     "lon": "${= (new Random().nextDouble() * 2 - 1 ) * 180}"
   },
   "deviceId": "bosch-heinrichstrasse-x123",

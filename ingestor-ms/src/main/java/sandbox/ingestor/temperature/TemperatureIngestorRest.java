@@ -13,16 +13,15 @@ import javax.ws.rs.core.Response;
 @RestController
 public class TemperatureIngestorRest {
 
-    @Value("${eureka.instance.instance-id}")
-    private String instanceid;
-
     @Autowired
     TemperatureSender sender;
+    @Value("${eureka.instance.instance-id}")
+    private String instanceid;
 
     @PostMapping(path = "/tempmeasure")
     public Response ingestTemperature(@RequestBody TemperatureMeasure measure) {
         //TODO move to common package with interceptor
-        System.err.println("Temp Measure instance: "+instanceid);
+        System.err.println("Temp Measure instance: " + instanceid);
 
 
         sender.send(measure);
