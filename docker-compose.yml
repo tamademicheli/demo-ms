@@ -1,0 +1,80 @@
+version: '3'
+services:
+  service-registry:
+    image: dalaitama/service-registry:latest
+    ports:
+      - 8761:8761
+    hostname: service-registry
+    container_name: service-registry
+    networks:
+      - demo-ms
+
+  load-balancer:
+    image: dalaitama/load-balancer:latest
+    ports:
+      - 8762:8762
+    depends_on:
+      - service-registry
+    links:
+      - service-registry
+    networks:
+      - demo-ms
+
+  ingestor-ms:
+    image: dalaitama/ingestor-ms:latest
+    depends_on:
+          - load-balancer
+          - activemq
+    networks:
+      - demo-ms
+
+  ingestor-worker:
+    image: dalaitama/ingestor-worker
+    depends_on:
+      - activemq
+      - elasticsearch
+    networks:
+      - demo-ms
+
+  activemq:
+    image: webcenter/activemq
+    ports:
+     - 8161:8161
+    hostname: activemq
+    networks:
+      - demo-ms
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.6.10
+    ports:
+      - 9200:9200
+      - 9300:9300
+    hostname: elasticsearch
+    environment:
+          - cluster.name=measure-cluster
+          - node.name=temperature
+          - bootstrap.memory_lock=true
+          - xpack.security.enabled=false
+          - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+    ulimits:
+       memlock:
+          soft: -1
+          hard: -1
+    networks:
+      - demo-ms
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:5.6.10
+    depends_on:
+      - elasticsearch
+    ports:
+       - 5601:5601
+    hostname: kibana
+    networks:
+       - demo-ms
+
+
+networks:
+  demo-ms:
+
+
