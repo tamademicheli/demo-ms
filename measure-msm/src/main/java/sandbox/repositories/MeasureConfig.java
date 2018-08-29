@@ -39,10 +39,9 @@ public class MeasureConfig {
                 .put("path.home", elasticsearchHome)
                 .put("cluster.name", clusterName).build();
 
-        try (TransportClient client = new PreBuiltTransportClient(elasticsearchSettings)) {
-            client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(eshost), esport));
-            return client;
-        }
+        TransportClient client = new PreBuiltTransportClient(elasticsearchSettings);
+        client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(eshost), esport));
+        return client;
 
     }
 

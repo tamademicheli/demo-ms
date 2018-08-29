@@ -15,18 +15,22 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Document(indexName = "measurement", type = "temperature")
+@Document(indexName = "measure", type = "temperature")
 public class TemperatureMeasure implements Serializable {
 
     @Id
     String id;
+
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS")
     LocalDateTime measureTime;
+
     @GeoPointField
     GeoPoint location;
+
     String deviceId;
+
     double celsius;
 
     public TemperatureMeasure() {

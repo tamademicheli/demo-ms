@@ -30,6 +30,8 @@ services:
 
   ingestor-worker:
     image: dalaitama/ingestor-worker
+    ports:
+         - 5005:5005
     depends_on:
       - activemq
       - elasticsearch
@@ -40,6 +42,7 @@ services:
     image: webcenter/activemq
     ports:
      - 8161:8161
+     - 61616:61616
     hostname: activemq
     networks:
       - demo-ms
