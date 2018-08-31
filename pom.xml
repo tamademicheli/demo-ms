@@ -37,6 +37,8 @@
         <module>service-registry</module>
         <module>load-balancer</module>
         <module>measure-msm</module>
+        <module>fast-query-ms</module>
+        <module>slow-query-ms</module>
     </modules>
 
     <build>

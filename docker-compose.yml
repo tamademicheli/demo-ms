@@ -28,6 +28,22 @@ services:
     networks:
       - demo-ms
 
+  fast-query-ms:
+    image: dalaitama/fast-query-ms:latest
+    depends_on:
+          - load-balancer
+          - elasticsearch
+    networks:
+      - demo-ms
+
+  slow-query-ms:
+    image: dalaitama/slow-query-ms:latest
+    depends_on:
+            - load-balancer
+            - elasticsearch
+    networks:
+        - demo-ms
+
   ingestor-worker:
     image: dalaitama/ingestor-worker
     ports:

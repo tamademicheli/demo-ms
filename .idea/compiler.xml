@@ -6,12 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="fast-query-ms" />
         <module name="ingestor-ms" />
         <module name="ingestor-worker" />
         <module name="load-balancer" />
         <module name="measure-msm" />
         <module name="service-registry" />
+        <module name="slow-query-ms" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fast-query-ms (1)" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
