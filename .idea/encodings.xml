@@ -4,11 +4,13 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/fast-query-ms" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/fast-query-ms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fast-query-ms" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ingestor-ms" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ingestor-worker" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/load-balancer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/measure-msm" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-registry" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/slow-query-ms" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/slow-query-ms" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/slow-query-ms" charset="UTF-8" />
   </component>
